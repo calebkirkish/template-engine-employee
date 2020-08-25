@@ -4,66 +4,66 @@ module.exports = {
         {
             type: 'input',
             name: 'managerName',
-            message: 'What is your name?'
+            message: 'Enter Manager name:'
         },
         {
             type: 'input',
             name: 'managerId',
-            message: 'What is your ID?'
+            message: 'Manager ID:'
         },
         {
             type: 'input',
             name: 'managerEmail',
-            message: 'What is your email?'
+            message: 'Manager email:'
         },
         {
             type: 'input',
             name: 'managerOfficeNum',
-            message: 'What is your office number?'
+            message: 'Manager office number:'
         }
     ],
     intern: [
         {
             type: 'input',
             name: 'internName',
-            message: 'What is your name?'
+            message: 'Enter intern name:'
         },
         {
             type: 'input',
             name: 'internId',
-            message: 'What is your ID?'
+            message: 'Enter intern ID:'
         },
         {
             type: 'input',
             name: 'internEmail',
-            message: 'What is your email?'
+            message: 'Enter intern email:'
         },
         {
             type: 'input',
             name: 'internSchool',
-            message: 'What university do you attend?'
+            message: 'Enter university intern attending:'
         }
     ],
     engineer: [
         {
             type: 'input',
             name: 'engineerName',
-            message: 'What is your name?'
+            message: 'Enter engineer name:'
         },
         {
             type: 'input',
             name: 'engineerId',
-            message: 'What is your ID?'
+            message: 'Enter engineer ID:'
         },
         {
             type: 'input',
             name: 'engineerEmail',
-            message: 'What is your email?'
+            message: 'Enter engineer email:'
         },
         {
             type: 'input',
             name: 'engineerGitHub',
-            message: 'What is your GitHub username?'
+            message: 'Engineer GitHub username:'
         }
     ],
     employee: [
