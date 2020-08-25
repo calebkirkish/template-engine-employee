@@ -10,13 +10,14 @@ const OUTPUT_DIR = path.resolve(__dirname, 'output');
 const outputPath = path.join(OUTPUT_DIR, 'team.html');
 
 const render = require('./lib/htmlRenderer');
+const Employee = require('./lib/Employee');
 let teamArray = [];
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
-async function addManager(){
+async function addManager() {
 
-   const managerResponses = await inquirer.prompt(prompts.manager)
+    const managerResponses = await inquirer.prompt(prompts.manager)
     const manager = new Manager(
         managerResponses.managerName,
         managerResponses.managerId,
@@ -24,11 +25,33 @@ async function addManager(){
         managerResponses.managerOfficeNum
     )
     teamArray.push(manager)
+
+    addEmployee();
 }
 
-async function addEngineer(){
+async function addEmployee() {
 
-   const engineerResponses = await inquirer.prompt(prompts.engineer)
+    const employeeResponse = await inquirer.prompt(prompts.employee)
+    // console.log(employeeResponse)
+        switch (employeeResponse.typeOfEmployee) {
+            case 'Engineer':
+                addEngineer();
+                break;
+            case 'Intern':
+                addIntern();
+                break;
+            default:
+                console.log('Your dream team is complete!')
+                console.log(teamArray)
+                break;
+        }
+}
+
+addManager();
+
+async function addEngineer() {
+
+    const engineerResponses = await inquirer.prompt(prompts.engineer)
     const engineer = new Engineer(
         engineerResponses.engineerName,
         engineerResponses.engineerId,
@@ -37,25 +60,25 @@ async function addEngineer(){
     )
     teamArray.push(engineer)
 
-    function addEmployee() {
-
-    }
+addEmployee();
 }
-async function addIntern(){
 
-   const internResponses = await inquirer.prompt(prompts.intern)
+async function addIntern() {
+
+    const internResponses = await inquirer.prompt(prompts.intern)
     const intern = new Intern(
-        engineerResponses.internName,
-        engineerResponses.internId,
-        engineerResponses.internEmail,
-        engineerResponses.internSchool
+        internResponses.internName,
+        internResponses.internId,
+        internResponses.internEmail,
+        internResponses.internSchool
+
     )
     teamArray.push(intern)
 
-    function addEmployee() {
+    addEmployee();
 
-    }
 }
+
 
 
 // After the user has input all employees desired, call the `render` function (required
