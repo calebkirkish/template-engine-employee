@@ -62,8 +62,17 @@ module.exports = {
         },
         {
             type: 'input',
-            name: 'getGitHub',
+            name: 'engineerGitHub',
             message: 'What is your GitHub username?'
+        }
+    ],
+    employee: [
+        {
+            type: 'list',
+            name: 'typeOfEmployee',
+            message: 'Would you like to add an engineer, an intern, or complete the team build',
+            choices:['Engineer', 'Intern', 'Complete team'],
+            default: 'Complete team'
         }
     ]
 };
